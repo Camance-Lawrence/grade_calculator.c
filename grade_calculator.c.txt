@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//QUIZZ (TASK 1.1)
+float inputScorequiz()
+{
+	float quiz;
+	printf("Enter Quiz Score (0-100):");
+	scanf("%f", &quiz);
+	system ("cls");
+	
+	return quiz;
+}
+
+//EXAMM  (Task 1.2)
+float inputScoreexam()
+{
+	float exam;
+	printf("Enter Exam Score (0-100):");
+	scanf("%f", &exam);
+	system ("cls");
+	return exam;
+}
+
+//FINDING FINAL GRADE (task 2)
+float calculateFinalGrade(float a, float b)
+{
+	float qz=a;
+	float ex=b;
+	float final = ((qz*0.4)+(ex*0.6));
+	
+	return final;
+}
+
+//Letter Grade (TASK 3) BROKIN
+//float getLetterGrade()
+//{
+//	float finalg;
+//	
+//	if(finalg>=60 && finalg <70)
+//	{
+//		char range = 'B';
+//	} 
+//	
+//	else if (finalg>=70 && finalg <80)
+//	{
+//		char range = 'C';
+//	}
+//	
+//	else if (finalg>=80 && finalg <90)
+//	{
+//		char range = 'D';
+//	}
+//
+//	else if (finalg>=90 && finalg <100)
+//	{
+//		char range = 'D';
+//	}
+//	
+//	else
+//	{
+//		char range = 'F';
+//	}
+//	
+//	return range;
+//}
+
+
+//DISPlAY REPORT (TASK 4)
+void displayReport()
+{
+	float Quiz;
+	float Exam;
+	float Finalgrade;
+	printf("========== GRADE REPORT ==========\n");
+	printf("Quiz Score:   %.2f\n", Quiz);
+	printf("Exam Score:   %.2f\n", Exam);
+	printf("Final Grade:  %.2f\n", Finalgrade);
+	printf("Letter Grade: N\A\n");
+//	printf("%c", range);
+	printf("==================================");
+}
+
+
+
+int main()
+{
+	float Quiz = 0.0;
+	float Exam = 0.0;
+	float Finalgrade = 0.0;
+	
+	char choice;
+
+	
+	do{
+	system ("cls");
+	Quiz = inputScorequiz();
+	Exam = inputScoreexam();
+	
+	Finalgrade= calculateFinalGrade(Quiz,Exam);
+	
+//	char range = getrange(Finalgrade);
+	displayReport();
+
+	printf("\n\nProcess another grade? (Y/N): ");
+	scanf(" %c", &choice);
+	}
+	while (choice == 'Y' || choice =='y');
+	printf("\nThank you");
+
+	return 0;
+}
