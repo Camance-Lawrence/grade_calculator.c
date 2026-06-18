@@ -32,38 +32,42 @@ float calculateFinalGrade(float a, float b)
 	return final;
 }
 
-//Letter Grade (TASK 3) BROKIN
-//float getLetterGrade()
-//{
-//	float finalg;
-//	
-//	if(finalg>=60 && finalg <70)
-//	{
-//		char range = 'B';
-//	} 
-//	
-//	else if (finalg>=70 && finalg <80)
-//	{
-//		char range = 'C';
-//	}
-//	
-//	else if (finalg>=80 && finalg <90)
-//	{
-//		char range = 'D';
-//	}
-//
-//	else if (finalg>=90 && finalg <100)
-//	{
-//		char range = 'D';
-//	}
-//	
-//	else
-//	{
-//		char range = 'F';
-//	}
-//	
-//	return range;
-//}
+//Letter Grade (TASK 3) Broken permi hagbong ang student sa letter grade
+void getLetterGrade()
+{
+	float finalg;
+	
+	if(finalg>=60 && finalg <70)
+	{
+		char range = 'B';
+		printf("Letter Grade: %c\n", range);
+	} 
+	
+	else if (finalg>=70 && finalg <80)
+	{
+		char range = 'C';
+		printf("Letter Grade: %c\n", range);
+	}
+	
+	else if (finalg>=80 && finalg <90)
+	{
+		char range = 'D';
+		printf("Letter Grade: %c\n", range);
+	}
+
+	else if (finalg>=90 && finalg <100)
+	{
+		char range = 'D';
+		printf("Letter Grade: %c\n", range);
+	}
+	
+	else
+	{
+		char range = 'F';
+		printf("Letter Grade: %c\n", range);
+	}
+	
+}
 
 
 //DISPlAY REPORT (TASK 4)
@@ -76,7 +80,7 @@ void displayReport()
 	printf("Quiz Score:   %.2f\n", Quiz);
 	printf("Exam Score:   %.2f\n", Exam);
 	printf("Final Grade:  %.2f\n", Finalgrade);
-	printf("Letter Grade: N\A\n");
+	getLetterGrade();
 //	printf("%c", range);
 	printf("==================================");
 }
