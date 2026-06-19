@@ -5,10 +5,22 @@
 float inputScorequiz()
 {
 	float quiz;
-	printf("Enter Quiz Score (0-100):");
-	scanf("%f", &quiz);
+
+	do
+	{
+		printf("Enter Quiz Score (0-100):");
+		scanf("%f", &quiz);
+
+		if(quiz < 0 || quiz > 100)
+		{
+			printf("Grade is out of range, Please press ENTER to try again!\n");
+			getchar(); // para tangtang sa garbage value
+			getchar(); // pause thing, 
+			system("cls");
+		}
+	}while(quiz < 0 || quiz > 100);
+
 	system ("cls");
-	
 	return quiz;
 }
 
@@ -16,8 +28,20 @@ float inputScorequiz()
 float inputScoreexam()
 {
 	float exam;
-	printf("Enter Exam Score (0-100):");
-	scanf("%f", &exam);
+	do
+	{
+		printf("Enter Exam Score (0-100):");
+		scanf("%f", &exam);
+
+		if(exam < 0 || exam > 100 )
+		{
+			printf("Grade is out of range, Please press ENTER to try again!\n");
+			getchar(); // para tangtang sa garbage value
+			getchar(); // pause thing, 
+			system("cls");
+		}
+	}while(exam < 0 || exam > 100);
+
 	system ("cls");
 	return exam;
 }
@@ -33,13 +57,11 @@ float calculateFinalGrade(float a, float b)
 }
 
 //Letter Grade (TASK 3) Broken permi hagbong ang student sa letter grade
-void getLetterGrade()
+void getLetterGrade(float finalg)
 {
-	float finalg;
-	
 	if(finalg>=60 && finalg <70)
 	{
-		char range = 'B';
+		char range = 'D';
 		printf("Letter Grade: %c\n", range);
 	} 
 	
@@ -51,13 +73,13 @@ void getLetterGrade()
 	
 	else if (finalg>=80 && finalg <90)
 	{
-		char range = 'D';
+		char range = 'B';
 		printf("Letter Grade: %c\n", range);
 	}
 
 	else if (finalg>=90 && finalg <100)
 	{
-		char range = 'D';
+		char range = 'A';
 		printf("Letter Grade: %c\n", range);
 	}
 	
@@ -80,7 +102,7 @@ void displayReport()
 	printf("Quiz Score:   %.2f\n", Quiz);
 	printf("Exam Score:   %.2f\n", Exam);
 	printf("Final Grade:  %.2f\n", Finalgrade);
-	getLetterGrade();
+	getLetterGrade(Finalgrade);
 //	printf("%c", range);
 	printf("==================================");
 }
@@ -110,7 +132,7 @@ int main()
 	scanf(" %c", &choice);
 	}
 	while (choice == 'Y' || choice =='y');
-	printf("\nThank you");
+	printf("\nThank you\n");
 
 	return 0;
 }
